@@ -4,6 +4,8 @@
 建议使用python 3.9版本，其他版本是否可行未经测试。注意勾选配置环境变量。
 ### 安装依赖：
 在文件所在目录打开cmd或终端，输入`pip install -r requirements`(确保你的python安装时自带pip，否则请先安装pip)。如果这一步有错误，请根据pip的报错，缺什么就`pip install 什么`，需要什么版本就`pip install xx==哪个版本`。
+### 导入TTS模型：
+下载地址[百度网盘](https://pan.baidu.com/s/1YOeEZ3IHTyP7cXWKuVf28A?pwd=DZZZ)，提取码：DZZZ。文件大小500MB，没有特殊手段或氪金的话一个小时左右下完。下载完成之后，请将其剪切粘贴到项目文件目录下的`synthesizer/saved_models`目录下。以后也许我会训练更多的模型放在这里以供下载。
 ### 准备魔法：
 准备一个代理工具或VPN（推荐使用Clash）。在这一步你可能还需要配置你的Clash，见下。
 导入Cookie：准备一个开通了newbing聊天模式的微软账号。在Edge浏览器或谷歌浏览器的扩展商店里面搜索Cookie-Editor安装之后打开它，点击Export，选择Export as JSON.然后回到项目目录，打开bingAI-cookies.json，粘贴获取的cookie.
