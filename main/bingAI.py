@@ -33,7 +33,6 @@ class BingDingZhen:
             dz.synthesize_vocode(result)
             times += 1
             print(f"¶¡ÕæËµ£º{result}\n{times} of {response['max_messages']}")
-            dz.speak()
         await bot.close()
     def __init__(self):
         asyncio.run(self.main())

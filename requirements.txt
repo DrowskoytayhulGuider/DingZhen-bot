@@ -1,33 +1,3 @@
-SpeechRecognition
-umap-learn
-visdom
-librosa>=0.8.0
-matplotlib>=3.3.0
-numpy==1.19.3; platform_system == "Windows"
-numpy==1.19.4; platform_system != "Windows"
-scipy>=1.0.0
-tqdm
-torch
-sounddevice
-SoundFile
-Unidecode
-inflect
-wxPython
-websockets
-BingImageCreator
-multiprocess
-numba
-webrtcvad; platform_system != "Windows"
-pypinyin
-flask
-flask_wtf
-flask_cors
-gevent==21.8.0
-flask_restx
-tensorboard
-aiohttp
-certifi
-httpx
-prompt_toolkit
-requests
-rich
+version https://git-lfs.github.com/spec/v1
+oid sha256:cfdf80077c714f81aba5f1391bf4c0de1ff3228faaaa52ebbb7561da1c5a24b9
+size 437
