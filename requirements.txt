@@ -7,11 +7,14 @@ numpy==1.19.3; platform_system == "Windows"
 numpy==1.19.4; platform_system != "Windows"
 scipy>=1.0.0
 tqdm
+torch
 sounddevice
 SoundFile
 Unidecode
 inflect
 wxPython
+websockets
+BingImageCreator
 multiprocess
 numba
 webrtcvad; platform_system != "Windows"
