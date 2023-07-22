@@ -9,7 +9,7 @@
 ### 准备魔法：
 准备一个代理工具或VPN（推荐使用[Clash](https://github.com/Fndroid/clash_for_windows_pkg/releases)，找个机场购买或使用免费服务）。在这一步你可能还需要配置你的Clash，见下。
 ### 导入Cookie：
-准备一个开通了newbing聊天模式的微软账号。在Edge浏览器或谷歌浏览器的扩展商店里面搜索Cookie-Editor安装之后打开它，点击Export，选择Export as JSON.然后回到项目目录，打开bingAI-cookies.json，粘贴获取的cookie.
+准备一个开通了newbing聊天模式的微软账号。登录到你的newbing聊天模式，在Edge浏览器或谷歌浏览器的扩展商店里面搜索Cookie-Editor安装之后在聊天页面下打开它，点击Export，选择Export as JSON.然后回到项目目录，打开bingAI-cookies.json，粘贴获取的cookie.
 ### 开始聊天：
 打开DingZhen.py或DingZhen_cmd.py即可开始聊天。
 ## 使用方法
@@ -41,4 +41,5 @@
 1.Exception: Authentication failed:可能原因：cookie配置不正确，或者没有加入等候名单。解决方案：更新Cookie或按照准备工作正确配置Cookie，或用一个能访问新必应的微软账号。  
 2.httpx.TooManyRedirects: Exceeded maximum allowed redirects:可能原因：代理规则配置有误，或者程序代码中的proxy代理不正确。解决方案：如果代理工具开启了系统代理，可在设置-网络和Internet-代理中查看代理服务器地址和端口，填入其中，如："http://xxx.x.x.x:port"。  
 3.websockets.exceptions.InvalidStatusCode: server rejected WebSocket connection: HTTP 200:可能原因：代理工具未正确开启TUN模式。若排除了以上原因可以多刷新几次试试。  
-4.asyncio.exceptions.TimeoutError:解决方案：在`python\Lib\site-packages\websockets\legacy\client.py`的442行和444行，右键编辑，改：`open_timeout: Optional[float] = 30,#10`和`ping_timeout: Optional[float] = 30,#20`即可（我是这么解决的）
+4.asyncio.exceptions.TimeoutError:解决方案：在`python\Lib\site-packages\websockets\legacy\client.py`的442行和444行，右键编辑，改：`open_timeout: Optional[float] = 30,#10`和`ping_timeout: Optional[float] = 30,#20`即可（我是这么解决的）  
+5.若遇见“Info:运异丁真，鉴定为：珠脑过载”，别担心，这个问题很简单，反复点击“发送”重试即可。
