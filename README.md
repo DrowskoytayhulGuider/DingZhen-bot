@@ -7,8 +7,9 @@
 ### 导入TTS模型：
 下载地址[百度网盘](https://pan.baidu.com/s/1YOeEZ3IHTyP7cXWKuVf28A?pwd=DZZZ)，提取码：DZZZ。文件大小500MB，没有特殊手段或氪金的话一个小时左右下完。下载完成之后，请将其剪切粘贴到项目文件目录下的`synthesizer/saved_models`目录下。以后也许我会训练更多的模型放在这里以供下载。
 ### 准备魔法：
-准备一个代理工具或VPN（推荐使用Clash）。在这一步你可能还需要配置你的Clash，见下。
-导入Cookie：准备一个开通了newbing聊天模式的微软账号。在Edge浏览器或谷歌浏览器的扩展商店里面搜索Cookie-Editor安装之后打开它，点击Export，选择Export as JSON.然后回到项目目录，打开bingAI-cookies.json，粘贴获取的cookie.
+准备一个代理工具或VPN（推荐使用[Clash](https://github.com/Fndroid/clash_for_windows_pkg/releases)，找个机场购买或使用免费服务）。在这一步你可能还需要配置你的Clash，见下。
+### 导入Cookie：
+准备一个开通了newbing聊天模式的微软账号。在Edge浏览器或谷歌浏览器的扩展商店里面搜索Cookie-Editor安装之后打开它，点击Export，选择Export as JSON.然后回到项目目录，打开bingAI-cookies.json，粘贴获取的cookie.
 ### 开始聊天：
 打开DingZhen.py或DingZhen_cmd.py即可开始聊天。
 ## 使用方法
