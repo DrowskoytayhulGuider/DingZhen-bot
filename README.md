@@ -1,15 +1,29 @@
 # 电子丁真（接入NewBing聊天模式和用MockingBird训练的丁真语音模型的聊天机器人）
+效果图：
+![Snipaste_2023-07-21_12-03-09](https://github.com/DrowskoytayhulGuider/DingZhen-bot/assets/77562801/88df24de-3b0f-4a1b-944d-a8dabfcde698)  
+真的可以防止撤回(Preserved the message from being deleted)：
+![Snipaste_2023-07-21_12-05-18](https://github.com/DrowskoytayhulGuider/DingZhen-bot/assets/77562801/32780c4a-dd60-46c1-b824-016194dda159)
 ## 准备工作
 ### python环境：
 建议使用python 3.9版本，其他版本是否可行未经测试。注意勾选配置环境变量。
+![Snipaste_2023-07-22_19-53-21](https://github.com/DrowskoytayhulGuider/DingZhen-bot/assets/77562801/5eb51501-9c34-4edc-8822-f0e59081da9d)
+![Snipaste_2023-07-22_19-54-22](https://github.com/DrowskoytayhulGuider/DingZhen-bot/assets/77562801/cdf686ab-d507-4abb-8d0a-63481436ae11)
 ### 安装依赖：
 在文件所在目录打开cmd或终端，输入`pip install -r requirements`(确保你的python安装时自带pip，否则请先安装pip)。如果这一步有错误，请根据pip的报错，缺什么就`pip install 什么`，需要什么版本就`pip install xx==哪个版本`。
+![Snipaste_2023-07-22_20-07-55](https://github.com/DrowskoytayhulGuider/DingZhen-bot/assets/77562801/a82e114b-64d7-428e-971d-ec2bb261cbcf)
+![Snipaste_2023-07-22_20-08-39](https://github.com/DrowskoytayhulGuider/DingZhen-bot/assets/77562801/971cb41a-5070-435c-b256-0484e405d8c3)
 ### 导入TTS模型：
 下载地址[百度网盘](https://pan.baidu.com/s/1YOeEZ3IHTyP7cXWKuVf28A?pwd=DZZZ)，提取码：DZZZ。文件大小500MB，没有特殊手段或氪金的话一个小时左右下完。下载完成之后，请将其剪切粘贴到项目文件目录下的`synthesizer/saved_models`目录下。以后也许我会训练更多的模型放在这里以供下载。
+![Snipaste_2023-07-22_20-17-05](https://github.com/DrowskoytayhulGuider/DingZhen-bot/assets/77562801/4b440f3f-aac8-44d0-8309-9f92ea7f2e02)
 ### 准备魔法：
 准备一个代理工具或VPN（推荐使用[Clash](https://github.com/Fndroid/clash_for_windows_pkg/releases)，找个机场购买或使用免费服务）。在这一步你可能还需要配置你的Clash，见下。
 ### 导入Cookie：
 准备一个开通了newbing聊天模式的微软账号。登录到你的newbing聊天模式，在Edge浏览器或谷歌浏览器的扩展商店里面搜索Cookie-Editor安装之后在聊天页面下打开它，点击Export，选择Export as JSON.然后回到项目目录，打开bingAI-cookies.json，粘贴获取的cookie.
+![Snipaste_2023-07-22_20-19-18](https://github.com/DrowskoytayhulGuider/DingZhen-bot/assets/77562801/2f77a25f-f726-4382-8e87-f2d04c041946)
+![Snipaste_2023-07-22_20-19-45](https://github.com/DrowskoytayhulGuider/DingZhen-bot/assets/77562801/388f0f98-131b-40f9-a9c5-1ab23b00355d)
+![Snipaste_2023-07-22_20-25-10](https://github.com/DrowskoytayhulGuider/DingZhen-bot/assets/77562801/b2c6af14-cbdc-44b5-91e6-bf0e7018c9be)
+![Snipaste_2023-07-22_20-26-56](https://github.com/DrowskoytayhulGuider/DingZhen-bot/assets/77562801/a0373c92-ad1e-4851-81c8-c8eee55efd67)
+![Snipaste_2023-07-22_20-30-04](https://github.com/DrowskoytayhulGuider/DingZhen-bot/assets/77562801/440fc641-9098-400d-9332-42917cf982fd)
 ### 开始聊天：
 打开DingZhen.py或DingZhen_cmd.py即可开始聊天。
 ## 使用方法
@@ -32,10 +46,17 @@
 4.经测试本程序可以解决部分由于微软监管**撤回**信息的问题。在此客户端，应该被**撤回**的消仍然会被保留（但微软有概率直接让Bing闭嘴，直接塞一句"My Mistakes..."（不是输出到一半撤回，而是直接弹个这个出来）这是极小概率事件，我测试也就只遇到过一次）。  
 5.对于强制切断对话，这取决于咒语的解限水平（这个丁真咒语经过我的测试好像没被掐断过）。
 ## 设置魔法（Clash为例）
-### 设置代理规则：
-可以直接开全局模式（但这样访问国内网站不便），也可以自行配置：先确认服务商的配置文件中是否有bing.com的代理，右键单击配置文件，选择编辑，然后查看其中是否有`'DOMAIN-SUFFIX,bing.com,微软服务'`或类似字段，若没有请添加；然后在规则模式下，找到bing.com走的代理服务（如：微软服务），确保其不是DIRECT（直连）。若其为DIRECT，请选择一个节点，或者直接选“节点选择”。
+### 设置代理模式：
+可以直接开全局模式（但这样访问国内网站不便），也可以自行配置：先确认服务商的配置文件中是否有bing.com的代理，右键单击配置文件，选择编辑，然后查看其中是否有`'DOMAIN-SUFFIX,bing.com,微软服务'`或类似字段，若没有请添加（一般都有，这步可跳过）；然后在规则模式下，找到bing.com走的代理服务（如：微软服务），确保其不是DIRECT（直连）。若其为DIRECT，请选择一个节点，或者直接选“节点选择”。  
+推荐直接开全局，用完就关了还是很方便：
+![Snipaste_2023-07-22_20-32-58](https://github.com/DrowskoytayhulGuider/DingZhen-bot/assets/77562801/31cec25a-7a5b-4729-b1a6-023d2ef09055)  
+若你非要开规则：
+![Snipaste_2023-07-22_20-38-12](https://github.com/DrowskoytayhulGuider/DingZhen-bot/assets/77562801/bb5ce2d5-b5e7-452d-ac98-955d9888a9a1)
 ### 配置TUN模式：
 在主页点击“服务模式-管理”（Service Mode），安装服务管理，其有两个安装方法（schtasks和winsw）选一个安装，不行就安装另一个或者重复几次，直到绿色地球亮起，然后打开TUN模式。
+![Snipaste_2023-07-22_20-38-38](https://github.com/DrowskoytayhulGuider/DingZhen-bot/assets/77562801/bc86c597-7dfe-479f-88d4-e792a22b2227)
+![Snipaste_2023-07-22_20-39-48](https://github.com/DrowskoytayhulGuider/DingZhen-bot/assets/77562801/97959211-2d10-4e76-925e-fd2d40ccc492)
+![Snipaste_2023-07-22_20-40-56](https://github.com/DrowskoytayhulGuider/DingZhen-bot/assets/77562801/022c103e-00de-4278-bf4e-cb17a375df99)
 ## 常见错误
 **声明：我只是一个刚高考完的学生，编程只是我的课外兴趣，一些问题我不能很好解决。** 可以在issue里讨论，如果有我知道解决方案的，我会来回答。更多的常见错误，参见[EgdeGPT issue](https://github.com/acheong08/EdgeGPT/issues)或[MockingBird issue](https://github.com/babysor/MockingBird/issues)  
 1.Exception: Authentication failed:可能原因：cookie配置不正确，或者没有加入等候名单。解决方案：更新Cookie或按照准备工作正确配置Cookie，或用一个能访问新必应的微软账号。  
