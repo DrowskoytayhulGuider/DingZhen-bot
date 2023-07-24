@@ -1,5 +1,5 @@
 # 电子丁真（接入NewBing聊天模式和用MockingBird训练的丁真语音模型的聊天机器人）
-效果图：
+效果图：  
 ![Snipaste_2023-07-21_12-03-09](https://github.com/DrowskoytayhulGuider/DingZhen-bot/assets/77562801/88df24de-3b0f-4a1b-944d-a8dabfcde698)  
 真的可以防止撤回(Preserved the message from being deleted)：
 ![Snipaste_2023-07-21_12-05-18](https://github.com/DrowskoytayhulGuider/DingZhen-bot/assets/77562801/32780c4a-dd60-46c1-b824-016194dda159)
