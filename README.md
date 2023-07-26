@@ -1,4 +1,6 @@
 # 电子丁真（接入NewBing聊天模式和用MockingBird训练的丁真语音模型的聊天机器人）
+**整活有风险，封号需谨慎**  
+如遇无法正常访问新必应的情况，请尝试**更换节点**或者**注册新号**。推荐用**小号**体验。  
 效果图：  
 ![Snipaste_2023-07-21_12-03-09](https://github.com/DrowskoytayhulGuider/DingZhen-bot/assets/77562801/88df24de-3b0f-4a1b-944d-a8dabfcde698)  
 真的可以防止撤回(Preserved the message from being deleted)：
