@@ -39,7 +39,7 @@ def create_completer(commands: list, pattern_str: str = "$") -> WordCompleter:
     return WordCompleter(words=commands, pattern=re.compile(pattern_str))
 
 
-def _create_history_logger(f):
+def _create_history_logger(f) -> callable:
     def logger(*args, **kwargs) -> None:
         tmp = sys.stdout
         sys.stdout = f
@@ -106,6 +106,7 @@ async def async_main(args: argparse.Namespace) -> None:
         print()
         p_hist(question + "\n")
         if question == "!exit":
+            await bot.close()
             break
         if question == "!help":
             print(

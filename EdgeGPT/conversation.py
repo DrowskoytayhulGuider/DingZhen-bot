@@ -33,7 +33,6 @@ class Conversation:
             or os.environ.get("HTTPS_PROXY")
             or None
         )
-        print(proxy+'\n')
         if proxy is not None and proxy.startswith("socks5h://"):
             proxy = "socks5://" + proxy[len("socks5h://") :]
         self.session = httpx.Client(

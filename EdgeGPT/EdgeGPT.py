@@ -2,6 +2,7 @@
 Main.py
 """
 from __future__ import annotations
+
 import json
 from pathlib import Path
 from typing import Generator
@@ -15,7 +16,7 @@ from .utilities import *
 
 class Chatbot:
     """
-    Combines everything to make it seamless 
+    Combines everything to make it seamless
     """
 
     def __init__(
@@ -126,10 +127,12 @@ class Chatbot:
                 messages_left = response["item"]["throttling"][
                     "maxNumUserMessagesInConversation"
                 ] - response["item"]["throttling"].get(
-                    "numUserMessagesInConversation", 0
+                    "numUserMessagesInConversation",
+                    0,
                 )
                 if messages_left == 0:
                     raise Exception("Max messages reached")
+                message = ""
                 for msg in reversed(response["item"]["messages"]):
                     if msg.get("adaptiveCards") and msg["adaptiveCards"][0]["body"][
                         0
