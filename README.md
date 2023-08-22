@@ -11,9 +11,8 @@
 ![Snipaste_2023-07-22_19-53-21](https://github.com/DrowskoytayhulGuider/DingZhen-bot/assets/77562801/5eb51501-9c34-4edc-8822-f0e59081da9d)
 ![Snipaste_2023-07-22_19-54-22](https://github.com/DrowskoytayhulGuider/DingZhen-bot/assets/77562801/cdf686ab-d507-4abb-8d0a-63481436ae11)
 ### 安装依赖：
-在文件所在目录打开cmd或终端，输入`pip install -r requirements`(确保你的python安装时自带pip，否则请先安装pip)。如果这一步有错误，请根据pip的报错，缺什么就`pip install 什么`，需要什么版本就`pip install xx==哪个版本`。
+在文件所在目录打开cmd或终端，输入`pip install -r requirements`(确保你的python安装时自带pip，否则请先安装pip)。报错说版本冲突的话大体可以不管。
 ![Snipaste_2023-07-22_20-07-55](https://github.com/DrowskoytayhulGuider/DingZhen-bot/assets/77562801/a82e114b-64d7-428e-971d-ec2bb261cbcf)
-![Snipaste_2023-07-22_20-08-39](https://github.com/DrowskoytayhulGuider/DingZhen-bot/assets/77562801/971cb41a-5070-435c-b256-0484e405d8c3)
 ### 导入TTS模型：
 下载地址[百度网盘](https://pan.baidu.com/s/1YOeEZ3IHTyP7cXWKuVf28A?pwd=DZZZ)，提取码：DZZZ。文件大小500MB，没有特殊手段或氪金的话一个小时左右下完。下载完成之后，请将其剪切粘贴到项目文件目录下的`synthesizer/saved_models`目录下。以后也许我会训练更多的模型放在这里以供下载。
 ![Snipaste_2023-07-22_20-17-05](https://github.com/DrowskoytayhulGuider/DingZhen-bot/assets/77562801/4b440f3f-aac8-44d0-8309-9f92ea7f2e02)
