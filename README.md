@@ -62,7 +62,7 @@
 * CaptchaChallenge: User needs to solve CAPTCHA to continue.可能原因：没有通过真人验证。解决方案：账号登录NewBing后，随便发一句话，在弹出来的验证窗口中完成验证。
 ![Snipaste_2023-07-24_20-02-45](https://github.com/DrowskoytayhulGuider/DingZhen-bot/assets/77562801/e1c263e6-9cd9-42d2-8506-af5b92a34a18)
 * Exception: Authentication failed:可能原因：cookie配置不正确，或者没有加入等候名单。解决方案：更新Cookie或按照准备工作正确配置Cookie，或用一个能访问新必应的微软账号。
-* httpx.TooManyRedirects: Exceeded maximum allowed redirects:可能原因：代理规则配置有误，或者程序代码中的proxy代理不正确。解决方案：如果代理工具开启了系统代理，可在设置-网络和Internet-代理中查看代理服务器地址和端口，填入其中，如："http://127.0.0.1:port"。
+* httpx.TooManyRedirects: Exceeded maximum allowed redirects:可能原因：代理规则配置有误，或者程序代码中的proxy代理不正确。解决方案：如果代理工具开启了系统代理，可在设置-网络和Internet-代理中查看代理服务器地址和端口，填入其中，如："http://127.0.0.1:7890"。
 * websockets.exceptions.InvalidStatusCode: server rejected WebSocket connection: HTTP 200:可能原因：代理工具未正确开启TUN模式。若排除了以上原因可以多刷新几次试试。
 * asyncio.exceptions.TimeoutError:原因我不知道，但我是这么解决的。解决方案：在`python\Lib\site-packages\websockets\legacy\client.py`的442行和444行，右键编辑，改：`open_timeout: Optional[float] = 30,#10`和`ping_timeout: Optional[float] = 30,#20`即可
 * 若遇见“Info:运异丁真，鉴定为：珠脑过载”，别担心，这个问题很简单，反复点击“发送”重试即可。
