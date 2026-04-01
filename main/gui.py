@@ -242,7 +242,7 @@ class GUI(wx.Frame):
             self.send_button.Disable()
             try:
                 response = client.chat.completions.create(
-                    model="deepseek-reasoner",
+                    model="deepseek-chat",
                     messages=sign,
                     temperature=1.1,
                     top_p=0.9,
@@ -343,7 +343,7 @@ class GUI(wx.Frame):
 
     def about_button_click(self, event):
         msg = '项目名称：电子丁真\
-        \n作者：周故意太湖给他\
+        \n作者：不能睡觉的小王\
         \n简介：这是一款接入了DeepSeek-R1的API和MockingBird实时语音克隆模型的丁真风味聊天机器人。\
         \n特别鸣谢：babysor，他提供了TTS模型训练程序，其中我引用了MockingBird中的部分代码。'
         msg_box = wx.MessageDialog(None, msg, "注意事项")

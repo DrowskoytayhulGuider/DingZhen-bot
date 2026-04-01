@@ -1,3 +1,6 @@
 
 synthesizer/saved_models/dingzhen.pt
 __pycache__/
+/encoder/saved_models/pretrained.pt
+/vocoder/saved_models/pretrained/g_hifigan.pt
+/final.mp4

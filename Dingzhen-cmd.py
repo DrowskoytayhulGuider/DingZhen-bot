@@ -6,9 +6,8 @@ dz = DingZhen()
 with open("DeepSeek_API.txt", "r", encoding="utf-8") as file:
     api_key = file.read()
 client = OpenAI(
-    base_url="https://integrate.api.nvidia.com/v1",
+    base_url="https://api.deepseek.com",
     api_key=api_key
-    # api_key="sk-9c7d229fc5474c5a9332063387569e64", base_url="https://api.deepseek.com"
 )
 map = {"0": "零", "1": "一", "2": "二", "3": "三", "4": "四", "5": "五", "6": "六", "7": "七", "8": "八", "9": "九",
        "-": "负", "⁓": "~"}
@@ -30,7 +29,7 @@ while True:
     rep = ""
     try:
         completion = client.chat.completions.create(
-            model="deepseek-ai/deepseek-r1",
+            model="deepseek-chat",
             # model="deepseek-reasoner",
             messages=message,
             temperature=1.1,
@@ -38,12 +37,7 @@ while True:
             max_tokens=4096 * 2,
             stream=False
         )
-        if completion.choices[0].message.content.find("<think>") and completion.choices[0].message.content.find(
-                "</think>"):
-            msg = completion.choices[0].message.content.split("</think>\n")
-            think = msg[0].split("<think>\n")[1]
-            rep = msg[1]
-        elif len(completion.choices[0].message.content) != 0:
+        if len(completion.choices[0].message.content) != 0:
             get_rep = completion.choices[0].message.content.split("\n")
             think = "".join(get_rep[0:len(get_rep) - 1])
             rep = re.sub(r"[\u0000-\uffff]*规则[\u0000-\uffff]*?。", "", get_rep[len(get_rep) - 1])
