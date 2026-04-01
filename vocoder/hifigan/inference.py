@@ -13,9 +13,9 @@ _device = None
 
 def load_checkpoint(filepath, device):
     assert os.path.isfile(filepath)
-    print("Loading '{}'".format(filepath))
+    # print("Loading '{}'".format(filepath))
     checkpoint_dict = torch.load(filepath, map_location=device)
-    print("Complete.")
+    # print("Complete.")
     return checkpoint_dict
 
 
@@ -23,7 +23,8 @@ def load_model(weights_fpath, config_fpath=None, verbose=True):
     global generator, _device, output_sample_rate
 
     if verbose:
-        print("Building hifigan")
+        # print("Building hifigan")
+        pass
 
     if config_fpath == None:
         model_config_fpaths = list(weights_fpath.parent.rglob("*.json"))

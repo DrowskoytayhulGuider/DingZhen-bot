@@ -14,7 +14,7 @@ def run_synthesis(in_dir, out_dir, model_dir, hparams):
     # This generates ground truth-aligned mels for vocoder training
     synth_dir = Path(out_dir).joinpath("mels_gta")
     synth_dir.mkdir(parents=True, exist_ok=True)
-    print(str(hparams))
+    # print(str(hparams))
 
     # Check for GPU
     if torch.cuda.is_available():
@@ -23,7 +23,7 @@ def run_synthesis(in_dir, out_dir, model_dir, hparams):
             raise ValueError("`hparams.synthesis_batch_size` must be evenly divisible by n_gpus!")
     else:
         device = torch.device("cpu")
-    print("Synthesizer using device:", device)
+    # print("Synthesizer using device:", device)
 
     # Instantiate Tacotron model
     model = Tacotron(embed_dims=hparams.tts_embed_dims,

@@ -64,12 +64,12 @@ def simple_table(item_tuples) :
             body += '|'
             border += '+'
 
-    print(border)
-    print(head)
-    print(border)
-    print(body)
-    print(border)
-    print(' ')
+    # print(border)
+    # print(head)
+    # print(border)
+    # print(body)
+    # print(border)
+    # print(' ')
 
 
 def time_since(started) :

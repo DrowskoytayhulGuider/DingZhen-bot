@@ -32,7 +32,7 @@ class Visualizations:
         self.step_times = []
         self.losses = []
         self.eers = []
-        print("Updating the visualizations every %d steps." % update_every)
+        # print("Updating the visualizations every %d steps." % update_every)
         
         # If visdom is disabled TODO: use a better paradigm for that
         self.disabled = disabled    

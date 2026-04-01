@@ -525,8 +525,8 @@ class Tacotron(nn.Module):
         self.zero_grad()
         for name, child in self.named_children():
             if name in whitelist_layers:
-                print("Trainable Layer: %s" % name)
-                print("Trainable Parameters: %.3f" % sum([np.prod(p.size()) for p in child.parameters()]))
+                # print("Trainable Layer: %s" % name)
+                # print("Trainable Parameters: %.3f" % sum([np.prod(p.size()) for p in child.parameters()]))
                 for param in child.parameters():
                     param.requires_grad = False
 
@@ -565,5 +565,6 @@ class Tacotron(nn.Module):
         parameters = filter(lambda p: p.requires_grad, self.parameters())
         parameters = sum([np.prod(p.size()) for p in parameters]) / 1_000_000
         if print_out:
-            print("Trainable Parameters: %.3fM" % parameters)
+            # print("Trainable Parameters: %.3fM" % parameters)
+            pass
         return parameters
