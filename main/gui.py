@@ -1,3 +1,4 @@
+import json
 import queue
 import re
 import threading
@@ -9,6 +10,7 @@ import speech_recognition as sr
 import wx
 import wx.media
 from openai import OpenAI
+from vosk import KaldiRecognizer
 
 from main.voice import DingZhen
 
@@ -378,8 +380,19 @@ class GUI(wx.Frame):
                 self.info_label.SetLabelText(self.default_text + "请说话...")
                 audio = r.listen(source)
                 self.info_label.SetLabelText(self.default_text + "识别中...")
-                text = eval(r.recognize_vosk(audio))["text"]
+                from vosk import Model
+                model = Model(r"model")
+                rec = KaldiRecognizer(model, 16000)
+                data = audio.get_raw_data(convert_rate=16000, convert_width=2)
+                if rec.AcceptWaveform(data):
+                    result = json.loads(rec.Result())
+                    text = result.get("text", "")
+                else:
+                    result = json.loads(rec.PartialResult())
+                    text = result.get("partial", "")
                 text = re.sub(" ", "", text)
+                # 获取更高质量的语音识别服务
+                # text = r.recognize_google(audio,language='zh-cn')
                 self.send_text.SetValue(text)
                 self.info_label.SetLabelText(self.default_text + "完成！")
         except Exception as e:
